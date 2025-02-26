@@ -1,0 +1,19 @@
+how react router works
+1.first install then wrap the app component isisde <BrowserRouter>
+     <App />
+  </BrowserRouter>, in main.jsx
+
+2.define ur routes inside app.js
+   <Routes>
+            <Route path="/" element={<Pokedex/>}/>
+            <Route path="/pokemon/:id" element={<PokemonDetails/>}/>
+            <Route path="*" element={<h1>Not Found</h1>}/>
+        </Routes>
+ 3. link ur component (after clicking that component on which route u neeed to come)
+
+    <Link to={`pokemon/${id}`} className='wrapper'>
+          <div className="pokemon">
+            <div className='pokemon-name'>{name}</div>
+            <img className='pokemon-img' src={imgUrl} alt="" />
+          </div>
+        </Link>
