@@ -2,10 +2,11 @@ import './PokemonDetails.css';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import usePokemonDetails from '../../Hooks/usePokemonDetails';
+import Pokemon from '../Pokemon/Pokemon';
 function PokemonDetails(){
     // this id name should be same as we have defined in our routes
     const {id}=useParams();
-   const [pokemon]=usePokemonDetails(id);
+   const [pokemon,pokemonListState]=usePokemonDetails(id);
     return (
         <>
         <h1 className='link'>
@@ -27,6 +28,18 @@ function PokemonDetails(){
                 <b>Type:</b> {pokemon.types.map(t=> <span className='span' key={t.type.name}>{t.type.name}</span>)}
             </div>
         </div>}
+
+        <div className='similar-pokemons'>
+            <h2>Similar Pokemons</h2>
+            <div className='similar-list'>
+                {pokemonListState.pokemonList.length>0 &&  
+                    pokemonListState.pokemonList.map((pokemon)=>{
+                        return <Pokemon id={pokemon.id} name={pokemon.name} key={pokemon.id} imgUrl={pokemon.image}/>
+                    })
+                    
+                }
+            </div>
+        </div>
         </>
     )
 }
