@@ -1,12 +1,10 @@
 import './PokemonDetails.css';
-import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import usePokemonDetails from '../../Hooks/usePokemonDetails';
 import Pokemon from '../Pokemon/Pokemon';
-function PokemonDetails(){
+function PokemonDetails({pokemonName}){
     // this id name should be same as we have defined in our routes
-    const {id}=useParams();
-   const [pokemon,pokemonListState]=usePokemonDetails(id);
+   const [pokemon,pokemonListState]=usePokemonDetails(pokemonName);
     return (
         <>
         <h1 className='link'>

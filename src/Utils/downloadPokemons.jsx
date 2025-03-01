@@ -27,6 +27,7 @@ async function downloadPokemon(pokemonListState,setPokemonListState,typeUrl=""){
            types:pokemon.types
        }
     })
+    console.log(pokemonFinalList);
     // setPokemonList(pokemonFinalList);
     setPokemonListState((state)=>({...state,pokemonList:pokemonFinalList}));
     
