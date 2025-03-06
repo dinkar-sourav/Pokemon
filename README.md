@@ -39,6 +39,9 @@ A dynamic Pokemon Pokedex application built using React and React Router. This a
 ### Similar Pokemon List
 ![Similar Pokemon List](3.png)
 
+### Search Functionality
+![Search Functionality](4.png)
+
 ## License
 
 This project is licensed under the MIT License.
